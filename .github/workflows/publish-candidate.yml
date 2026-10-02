@@ -1,0 +1,68 @@
+name: Publish candidate
+
+# The one job a pull request costs this repository: about a minute on Linux. It pushes
+# the commit, without the private folder, to MemorySafe-Labs/memorysafe-ci, where the
+# checks run free on every OS and report back as the public-ci status. It does not wait
+# for them. Nothing is filtered by path: a documentation-only pull request would otherwise
+# wait on a status that never arrives.
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  statuses: write
+
+concurrency:
+  group: publish-candidate-${{ github.event.pull_request.head.ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    # Pull requests from forks and Dependabot's get no secrets, so they are skipped here
+    # (a Dependabot pull request's head repository is this one, so the head check below
+    # does not exclude it) and checked by running scripts/push_candidate.py by hand.
+    if: >-
+      github.repository == 'MemorySafe-Labs/memorysafe'
+      && github.actor != 'dependabot[bot]'
+      && (github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The default for a pull request is its merge commit, and a status set on that
+          # shows on no pull request.
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Use the mirror's deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets.CI_MIRROR_DEPLOY_KEY }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::The CI_MIRROR_DEPLOY_KEY secret is missing. Add it as an Actions secret here, or run scripts/push_candidate.py by hand."
+            exit 1
+          fi
+          install -d -m 700 "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$HOME/.ssh/memorysafe-ci"
+          chmod 600 "$HOME/.ssh/memorysafe-ci"
+          # GitHub's published host key (gh api meta), pinned instead of scanned.
+          echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > "$HOME/.ssh/known_hosts_github"
+          echo "GIT_SSH_COMMAND=ssh -i $HOME/.ssh/memorysafe-ci -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts_github" >> "$GITHUB_ENV"
+      - name: Push the candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          if [ "$REF_TYPE" = tag ]; then
+            set -- --release-tag "$REF_NAME"
+          elif [ "$EVENT" = pull_request ]; then
+            set -- --branch "$HEAD_REF"
+          else
+            set -- --branch "$REF_NAME"
+          fi
+          python3 scripts/push_candidate.py --no-wait --remote git@github.com:MemorySafe-Labs/memorysafe-ci.git "$@"
