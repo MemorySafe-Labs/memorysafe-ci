@@ -1,0 +1,187 @@
+# MemorySafe {version}
+
+Private, governed memory for Claude Code, Claude Desktop and Codex, kept in one SQLite
+file on your own computer. macOS, Linux and Windows.
+
+![Install MemorySafe once: install it in one assistant, restart it and open the dashboard, then connect the rest from the dashboard.](https://raw.githubusercontent.com/{repository}/main/install-guide.png)
+
+## Before you start
+
+Whatever you install below: **restart the assistant afterwards.** Its first start then
+builds a private Python runtime — a minute or two, once. Within seconds,
+<http://127.0.0.1:8765/dashboard> shows that setup's progress on this computer, and it turns
+into your dashboard when setup finishes. That page is how you know it worked.
+
+## One install, every assistant
+
+Install MemorySafe in whichever assistant you use most, using its section below. Then open
+<http://127.0.0.1:8765/dashboard>. It finds the other assistants on this computer and asks once
+whether to connect them to the same memory. Say yes and it connects them, each through its own
+installer, and connects any you install later too. Remove MemorySafe from one of them later and
+it stays removed. Claude Desktop asks you to confirm extensions yourself, so for it the
+dashboard's **One memory, every assistant** panel shows the one step to take.
+
+From a terminal, `memorysafe connect` shows the same list and changes nothing;
+`memorysafe connect --apply` connects them:
+
+    ~/.local/share/MemorySafe/bin/memorysafe connect                  # Linux
+    ~/Library/Application\ Support/MemorySafe/bin/memorysafe connect  # macOS
+    %LOCALAPPDATA%\MemorySafe\bin\memorysafe.cmd connect              # Windows
+
+## Claude Code
+
+Needs the `claude` command-line tool, which the Claude desktop app does not include. If
+`claude --version` doesn't answer in a terminal, install it first:
+
+On macOS and Linux:
+
+    curl -fsSL https://claude.ai/install.sh | bash
+
+On Windows, in PowerShell:
+
+    irm https://claude.ai/install.ps1 | iex
+
+On Windows, open a new terminal afterwards. If `claude` still isn't found, the installer's
+last lines say how to add it to your PATH. Then:
+
+    claude plugin marketplace add {repository}
+    claude plugin install {plugin}@{marketplace}
+
+Restart Claude Code, run `/mcp`, and confirm `memorysafe` is connected with twelve tools.
+
+## Claude Desktop
+
+The desktop app does not include the `claude` command, so the commands above will not
+work here. Install the extension instead.
+
+Download https://github.com/{repository}/releases/latest/download/{mcpb}, then in Claude
+Desktop choose it from **Settings → Extensions → Advanced settings → Install Extension…**.
+Leave the data folder empty so Claude Desktop shares the same store. Don't double-click the
+file: on some computers Windows opens it in Notepad, and saving it from there breaks it.
+
+Then restart Claude Desktop and open <http://127.0.0.1:8765/dashboard>. If it loads,
+MemorySafe is installed. You do not need to download the extension again.
+
+## Codex
+
+    codex plugin marketplace add {repository}
+    codex plugin add {plugin}@{marketplace}
+
+Codex asks you to trust the plugin's hook before running it. MemorySafe works without
+it: the hook only makes automatic capture fire more reliably once you turn that on.
+
+## Other MCP clients
+
+Cursor, VS Code, Windsurf and anything else that speaks MCP share the same memory through
+one command at a fixed path, rewritten on every start so it follows updates:
+
+    ~/.local/share/MemorySafe/bin/memorysafe-mcp                  # Linux
+    ~/Library/Application\ Support/MemorySafe/bin/memorysafe-mcp  # macOS
+    %LOCALAPPDATA%\MemorySafe\bin\memorysafe-mcp.cmd              # Windows
+
+Give your client that path as the command to run, with no arguments. It needs MemorySafe
+installed in one of the three assistants above first, since it is that plugin's launcher
+the command reaches.
+
+## First start
+
+The first time an assistant starts MemorySafe, it downloads uv from GitHub, a Python
+build through uv, hash-pinned packages from PyPI, and the tokenizer data it counts tokens
+with, all into the MemorySafe folder. That takes a minute or two, once. After that,
+nothing leaves this computer, unless you connect another assistant to MemorySafe: that
+assistant's own installer then downloads the plugin from GitHub. On a network that blocks GitHub, set MEMORYSAFE_UV to a uv
+you already have, or HTTPS_PROXY to your proxy.
+
+## What MemorySafe decides
+
+Most agent memory tools are built to remember. This one is built to **decide what's worth
+keeping** — and to show you its reasoning. Every candidate gets one of four outcomes:
+
+| | |
+|---|---|
+| **Protect** | high value, kept with the reason on record; it leaves recall only when a later fact replaces it (recorded, and reversible) or you confirm you want it forgotten |
+| **Store** | worth keeping |
+| **Merge** | you already knew this; fold it in rather than duplicate |
+| **Skip** | not stored: automatic capture refused it, or automatic mode is off |
+
+What gets protected without being asked: safety and decision memories always; preferences
+and personal context; project notes only when they carry a date, amount, deadline, decision
+or constraint. Routine entries -- the third and later memory worded the same apart from its
+numbers, like a log line -- are stored but never protected automatically. You can protect or
+unprotect any memory yourself (`memorysafe protect <id>`, `memorysafe unprotect <id>`, or ask
+your assistant); forgetting a protected memory needs confirmation.
+
+When a later fact changes a date, time, amount or version on the same subject, or says so
+outright ("moved to", "switched from X to Y", "now"), it replaces the older one, recorded and
+reversible. A lower-confidence write, such as an agent's guess, never silently replaces a fact
+you stated: both stay, flagged. Search marks every memory that sits in an open conflict and
+shows its confidence. To undo a wrong update in one step:
+`memorysafe resolve-conflict <id> revert --confirm`. `memorysafe review-conflicts`,
+`forget` and `restore` are available as commands too.
+
+Optional capacity limit: set `MEMORYSAFE_MAX_ACTIVE` to cap how many memories stay in active
+recall. It is off unless you set it. Over the limit, MemorySafe moves the least valuable
+unprotected memories out of recall -- routine, never-recalled, low-importance and oldest first --
+records each one in its history, and `restore` brings any of them back. Protected memories are
+never moved out.
+
+A memory health score reports how well the store is doing: importance and confidence at
+60%, protection of high-value memories at 30%, duplicate cleanliness at 10%, minus 5 points
+for each open conflict (up to 30). The formula is printed with the score, so you can check the
+arithmetic rather than trust it.
+
+## What stays local
+
+- One SQLite file serves Claude Code, Claude Desktop and Codex:
+  `~/Library/Application Support/MemorySafe/data/memorysafe.sqlite3` on macOS,
+  `~/.local/share/MemorySafe/data/memorysafe.sqlite3` on Linux,
+  `%LOCALAPPDATA%\MemorySafe\data\memorysafe.sqlite3` on Windows.
+- The dashboard is reachable only from this computer.
+- MemorySafe does not copy full conversations and does not read an assistant's own memory.
+
+## Off by default
+
+Automatic capture is **disabled** until you explicitly enable it:
+
+> Turn on MemorySafe automatic mode.
+
+Even then, the assistant recognises and submits each candidate itself — MemorySafe never
+watches a conversation on its own. Manual saves always require you to ask.
+
+## What it refuses to store
+
+Automatic capture will not save assistant-generated text, inferences, passing remarks,
+passwords, API keys, payment or government identifiers, contact details, precise
+addresses, or medical information. These are refusals, not settings. Keeping other
+people's personal details out is a rule the assistant is told to follow; the server does
+not yet enforce it.
+
+## Installed MemorySafe by hand before?
+
+Then it is registered twice. Ask your assistant to run MemorySafe's migrate command, or
+run it yourself; it shows what it would change and changes nothing without `--apply`:
+
+    ~/.local/share/MemorySafe/bin/memorysafe migrate                  # Linux
+    ~/Library/Application\ Support/MemorySafe/bin/memorysafe migrate  # macOS
+    %LOCALAPPDATA%\MemorySafe\bin\memorysafe.cmd migrate              # Windows
+
+## Removing MemorySafe
+
+`memorysafe uninstall` takes it back off this computer: the plugins through each
+assistant's own installer, the private runtime, the local state, and any hand-written
+registration left from an earlier install. It lists what it would remove and changes
+nothing without `--apply`:
+
+    ~/.local/share/MemorySafe/bin/memorysafe uninstall                  # Linux
+    ~/Library/Application\ Support/MemorySafe/bin/memorysafe uninstall  # macOS
+    %LOCALAPPDATA%\MemorySafe\bin\memorysafe.cmd uninstall              # Windows
+
+**Your memories stay** unless you add `--purge`, and a purge copies the database to your
+home folder first and prints where. Claude Desktop asks you to confirm what its extensions
+do, so removing its extension stays with you: **Settings → Extensions → MemorySafe**.
+
+## About the numbers
+
+Live token counts are exact measurements of what MemorySafe holds locally. The savings
+figure shown next to them is a **modelled estimate**, not anyone's billed usage, and it is
+labelled as such wherever it appears.
