@@ -1,0 +1,109 @@
+name: Candidate
+
+# Runs on MemorySafe-Labs/memorysafe-ci, the public repository, where
+# scripts/push_candidate.py pushes candidate/<branch> for every pull request push and
+# release-candidate/<tag> for every v* tag. A candidate is the private repository's tree
+# without its private folder, as one commit with no parent. Nobody pushes candidate/*
+# to the private repository, and each job checks where it is, so this never runs there.
+on:
+  push:
+    branches: ["candidate/**", "release-candidate/**"]
+
+# The next push from the same source branch replaces the candidate, so its run replaces
+# this one.
+concurrency:
+  group: candidate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    if: github.repository == 'MemorySafe-Labs/memorysafe-ci'
+    uses: ./.github/workflows/ci.yml
+    with:
+      os: '["ubuntu-latest", "windows-latest", "macos-latest"]'
+
+  first-run:
+    if: github.repository == 'MemorySafe-Labs/memorysafe-ci'
+    uses: ./.github/workflows/first-run.yml
+    with:
+      os: '["ubuntu-latest", "windows-latest", "macos-latest"]'
+
+  # Tells the private commit how its candidate did. This job checks nothing out and runs
+  # no candidate code: the jobs above do, and the key must not be within their reach.
+  #
+  # It reports as a GitHub App the organisation owns, not with a person's token: a
+  # personal token expires within a year and leaves with the person. The App can write
+  # commit statuses on the one private repository and nothing else, and each run mints a
+  # token from its key that lasts an hour.
+  #
+  # The environment's branch limit is not a defence against a maintainer: whoever can push
+  # a candidate/* branch here (the holder of the private repository's mirror deploy key)
+  # could push a changed workflow and read the key. What bounds it is the App's one
+  # permission, and that release.yml needs a maintainer-pushed tag as well as the status
+  # before it publishes anything.
+  report:
+    if: always() && github.repository == 'MemorySafe-Labs/memorysafe-ci'
+    needs: [test, first-run]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: report
+    permissions: {}
+    steps:
+      # A step cannot test a secret in its own `if:`, so this one says whether the key
+      # is there. Without it the next step would fail, and every run would be red while
+      # the App is being set up or its key rotated.
+      - name: Is there a key to report with?
+        id: key
+        env:
+          KEY: ${{ secrets.STATUS_APP_PRIVATE_KEY }}
+        run: |
+          if [ -n "$KEY" ]; then echo "present=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Mint a token for the private repository
+        id: app
+        if: steps.key.outputs.present == 'true'
+        # v2, pinned to a commit: this is the one third-party action that touches the key.
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349
+        with:
+          app-id: ${{ vars.STATUS_APP_ID }}
+          private-key: ${{ secrets.STATUS_APP_PRIVATE_KEY }}
+          owner: MemorySafe-Labs
+          repositories: memorysafe
+      - name: Set the status on the private commit
+        env:
+          GH_TOKEN: ${{ steps.app.outputs.token }}
+          MESSAGE: ${{ github.event.head_commit.message }}
+          TEST: ${{ needs.test.result }}
+          FIRST_RUN: ${{ needs.first-run.result }}
+          REF_NAME: ${{ github.ref_name }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          # Without the token there is nobody to tell. The checks above still ran and
+          # this run still shows their result; the private commit stays pending until
+          # someone runs scripts/push_candidate.py by hand, which reports with their
+          # own login.
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::warning::STATUS_APP_PRIVATE_KEY is not set in the report environment, so the private commit was not told."
+            exit 0
+          fi
+          sha=$(printf '%s\n' "$MESSAGE" | sed -n 's/^Source-Commit: \([0-9a-f]\{40\}\)$/\1/p' | tail -n 1)
+          if [ -z "$sha" ]; then
+            echo "::error::The candidate's message has no Source-Commit trailer, so there is no commit to report to."
+            exit 1
+          fi
+          case "$REF_NAME" in
+            release-candidate/*) context=public-ci/release ;;
+            *) context=public-ci ;;
+          esac
+          if [ "$TEST" = success ] && [ "$FIRST_RUN" = success ]; then
+            state=success description="Passed on Linux, Windows and macOS"
+          elif [ "$TEST" = cancelled ] || [ "$FIRST_RUN" = cancelled ]; then
+            state=error description="Cancelled, usually by a newer push"
+          else
+            state=failure description="Failed on memorysafe-ci"
+          fi
+          gh api "repos/MemorySafe-Labs/memorysafe/statuses/$sha" --silent \
+            -f state="$state" -f context="$context" -f description="$description" -f target_url="$RUN_URL"
+          echo "$context is $state on $sha" >> "$GITHUB_STEP_SUMMARY"
