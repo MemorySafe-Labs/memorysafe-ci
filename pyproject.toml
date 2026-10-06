@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memorysafe-chatgpt-connector"
+version = "0.4.13"
+description = "Private local MCP memory connector for ChatGPT and Codex"
+requires-python = ">=3.10"
+dependencies = [
+  "cryptography==43.0.3",
+  "mcp==2.0.0",
+  "tiktoken==0.14.0",
+]
+
+[project.scripts]
+memorysafe = "memorysafe_chatgpt.cli:main"
+memorysafe-chatgpt = "memorysafe_chatgpt.server:main"
+memorysafe-setup = "memorysafe_chatgpt.setup_app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
