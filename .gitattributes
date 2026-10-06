@@ -1,0 +1,58 @@
+# Force LF on checkout regardless of a contributor's core.autocrlf, so a Windows
+# clone (default core.autocrlf=true) cannot silently turn a committed LF text file
+# into CRLF. Three CI failures already traced to exactly one instance of this:
+# a Windows checkout converted plugin/requirements.lock to CRLF, and
+# scripts/plugin_meta.py's runtime_key() hashes LOCK.read_bytes() -- raw bytes, no
+# newline normalization -- so the hash stopped matching the committed
+# plugin/scripts/runtime.env and CI reported the runtime files as stale.
+#
+# This is repo-wide rather than a one-line carve-out for that one file, because
+# the lock is not the only file in this position:
+#   - plugin/scripts/runtime.env and plugin/scripts/uv-checksums are generated
+#     from the same lock (scripts/plugin_meta.py) and are line-parsed, not just
+#     hashed: `. sourced` by the POSIX plugin/scripts/start and
+#     plugin/scripts/ensure_uv (an embedded \r lands inside the shell variable's
+#     value, not just the line ending), and `for /f`-parsed by their .cmd twins.
+#   - plugin/scripts/start, plugin/scripts/ensure_uv and plugin/scripts/capture_hook
+#     are POSIX shell scripts invoked by their shebang; a CRLF-corrupted shebang
+#     line breaks exec on Linux/macOS outright ("bad interpreter").
+#   - plugin/scripts/*.cmd are committed LF on purpose even though CRLF is the
+#     native Windows convention: a past bug ("the for /f quoting trap that made
+#     ensure_uv.cmd report every checksum as a mismatch") came from a stray CR
+#     landing in one of these files, and cmd.exe's `for /f` parses LF-terminated
+#     files fine. Left to core.autocrlf with no override, a Windows checkout would
+#     convert these to CRLF and reopen that exact class of bug.
+#
+# Verified before adding this: no file in the repository is currently committed
+# with CRLF, and the sole binary asset (assets/memorysafe-icon.png) is already
+# correctly classified as binary by git's own content-based detection under
+# text=auto -- so this rule changes nothing about what is checked in today, only
+# what a future Windows checkout is allowed to do to it.
+* text=auto eol=lf
+
+# The one carve-out, and it is cmd.exe's fault rather than a preference.
+#
+# The note above says *.cmd is committed LF on purpose because `for /f` parses
+# LF-terminated files fine. That part is still true, and every `for /f` in these
+# scripts reads a *data* file (runtime.env, uv-checksums) or a command's output,
+# none of which this rule touches: those stay LF, so the stray-CR bug it guards
+# against cannot come back through them.
+#
+# What `for /f` being fine does not cover is `call :label`. cmd.exe resolves a label
+# by byte offset, and on an LF-only batch file it lands mid-line and reports "The
+# system cannot find the batch label specified". Whether it does depends on where the
+# label happens to sit, so start.cmd worked by luck: inserting ONE `rem` line
+# anywhere above :write_cli_shim makes the call fail, the CLI shim is never written,
+# and nothing says so -- the server still starts, so only the first-run E2E notices.
+# Measured on Windows 11 with start.cmd at 178 lines; 0 filler lines pass, 1, 5 and
+# 24 all fail, and the same file with CRLF passes at every size.
+#
+# eol=crlf changes the checkout, not the blob: git still stores these LF, so nothing
+# about what is committed changes, and diffs stay clean. It applies on Linux and
+# macOS too, where these files are never executed -- the tests that read them use
+# Path.read_text, which normalizes newlines.
+plugin/scripts/*.cmd text eol=crlf
+
+# Explicit rather than relying solely on text=auto's own binary detection for the
+# one binary file in the tree today, and self-documenting for the next one added.
+*.png binary
