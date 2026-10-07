@@ -1,0 +1,63 @@
+---
+name: memorysafe
+description: Use MemorySafe to remember, automatically capture, find, forget, configure, or review durable memories kept locally and shared by Claude Code, Claude Desktop and Codex.
+---
+
+# MemorySafe
+
+MemorySafe is a private local memory layer with explicit manual controls and an opt-in automatic mode. One SQLite file on this computer is shared by Claude Code, Claude Desktop and Codex, so a memory saved in one is there in the others.
+
+## Use it when
+
+- The user explicitly asks you to remember or save a durable fact, preference, decision, project detail, or task.
+- The user asks what MemorySafe remembers or asks to find a stored memory.
+- The user explicitly asks to forget a stored memory.
+- The user asks for MemorySafe health, governance, token measurements, or the dashboard.
+- The user asks why MemorySafe is not working or requests troubleshooting.
+- The user explicitly asks to enable or disable automatic mode.
+- The user asks to use MemorySafe in another assistant, or to connect their other assistants.
+- The user directly states a durable, non-sensitive fact. Offer it to `memorysafe_auto_capture`
+  without checking the mode first; the server decides whether it is saved.
+
+## Rules
+
+1. Call `memorysafe_remember` only after an explicit request to remember something.
+2. Call `memorysafe_set_auto_mode` only when the user explicitly requests the change.
+3. Call `memorysafe_auto_capture` for concise, directly stated, durable facts, at most three per turn. Do **not** check whether automatic mode is on first — you cannot see it without an extra call, and waiting to find out is why nothing ever gets captured. The server returns `SKIP` with a reason when the mode is off, so offering a candidate never saves anything the user has not enabled.
+4. Never auto-capture assistant text, inferences, temporary remarks, third-party personal details, secrets, payment or government identifiers, contact details, precise addresses, or medical and health information.
+5. Never store passwords, API keys, full payment details, or similarly sensitive secrets.
+6. Do not imply that MemorySafe passively reads chats. You identify and submit each candidate through a tool call.
+7. When recalling, show meaningful memory content. Internal `MS-...` IDs are only for precise follow-up actions.
+8. When forgetting is ambiguous, call `memorysafe_find`, show the intended memory, and ask for confirmation before `memorysafe_forget`.
+9. Describe token numbers accurately. Live counters measure local MemorySafe content; modelled savings figures are not anyone's billed usage.
+10. To show the dashboard, call `memorysafe_health` with `open=true`, or tell the user to open `http://127.0.0.1:8765/dashboard` on this computer.
+11. Call `memorysafe_protect` only when the user asks to protect (or, with `protect=false`, unprotect) a memory. Forgetting a protected memory needs `confirm=true` after the user agrees.
+12. When a `memorysafe_find` result has `needs_review`, say the fact is in dispute and quote its `review_note`; do not state it as settled. Offer `memorysafe_review_conflicts`. If the user says a newer update was wrong, `memorysafe_resolve_conflict` with `action=revert` and `confirm=true` rejects it and brings back the prior fact.
+
+## First start
+
+The first start downloads uv, a Python, pinned packages and tokenizer data into the MemorySafe folder, which takes a minute or two. If a tool answers that MemorySafe is finishing its one-time setup, say so plainly and try again shortly. Nothing was saved by that call.
+
+## Connecting other assistants
+
+One install is enough: the other assistants on this computer connect to the same memory from the dashboard's **One memory, every assistant** panel, or with `connect` at the command's full path — `~/.local/share/MemorySafe/bin/memorysafe connect` on Linux, `"$HOME/Library/Application Support/MemorySafe/bin/memorysafe" connect` on macOS, `%LOCALAPPDATA%\MemorySafe\bin\memorysafe.cmd connect` on Windows. It is a dry run: show the user the list. Run it again with `--apply` only after they confirm, then ask them to restart each assistant it connected. It installs through each assistant's own plugin installer, never by editing configuration. Claude Desktop is never connected by it: the user confirms extensions inside Claude Desktop, so pass on the one step it reports.
+
+## Other MCP clients
+
+For an MCP client MemorySafe has no plugin for — Cursor, VS Code, Windsurf — give it the launcher at its fixed path as the command to run, with no arguments: `~/.local/share/MemorySafe/bin/memorysafe-mcp` on Linux, `~/Library/Application Support/MemorySafe/bin/memorysafe-mcp` on macOS, `%LOCALAPPDATA%\MemorySafe\bin\memorysafe-mcp.cmd` on Windows. It is written on every start, so it follows updates, and it needs MemorySafe installed in one of the three assistants above first. Do not edit that client's configuration yourself unless the user asks; show them the path and the block to paste.
+
+## Removing MemorySafe
+
+When the user asks to remove or uninstall MemorySafe, run `uninstall` at the command's full path — `~/.local/share/MemorySafe/bin/memorysafe uninstall` on Linux, `"$HOME/Library/Application Support/MemorySafe/bin/memorysafe" uninstall` on macOS, `%LOCALAPPDATA%\MemorySafe\bin\memorysafe.cmd uninstall` on Windows. It is a dry run: show them the list, including the sizes. Run it again with `--apply` only after they confirm. Their memories are kept unless they also ask for `--purge`, which copies the database to their home folder first; never add `--purge` on your own. Claude Desktop's extension is theirs to remove in Settings → Extensions, and the command says so. Ask them to restart each assistant afterwards.
+
+## Troubleshooting
+
+Call `memorysafe_doctor` first and work through its `next_actions` in order. Treat it as read-only evidence. Never inspect memory contents, runtime-key files, or conversation history during diagnosis.
+
+When terminal access is available and more detail is needed, `memorysafe doctor --json` gives the same report. The command is at `~/.local/share/MemorySafe/bin/memorysafe` on Linux and `~/Library/Application Support/MemorySafe/bin/memorysafe` on macOS.
+
+If the doctor reports MemorySafe registered twice, explain that an older manual install and that assistant's plugin both register it. Run the command at its full path with `migrate` — `~/.local/share/MemorySafe/bin/memorysafe migrate` on Linux, `"$HOME/Library/Application Support/MemorySafe/bin/memorysafe" migrate` on macOS. It is a dry run: show the user what it would change. Run it again as `…/bin/memorysafe migrate --apply`, at the same full path, only after they confirm, then ask them to restart that assistant. It keeps the manual entry of any assistant whose MemorySafe plugin is not installed, because that entry is its only registration.
+
+Before restarting services, changing configuration, migrating data, or deleting files, explain the repair, create a database backup when data could be affected, and obtain confirmation. Verify database integrity and readiness after the repair.
+
+Only when the user asks to prepare diagnostic material, run `memorysafe support-bundle`. It creates a sanitized local ZIP and never uploads it automatically. Tell the user where it was saved so they can review and share it voluntarily.
