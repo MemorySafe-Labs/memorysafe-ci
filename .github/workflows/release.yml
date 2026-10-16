@@ -1,0 +1,118 @@
+name: Release
+
+# Pushing a v* tag on main is how MemorySafe is published:
+#
+#   git tag --annotate v0.4.1 && git push --atomic origin main v0.4.1
+#
+# publish-candidate.yml pushes the tagged commit to MemorySafe-Labs/memorysafe-ci as
+# release-candidate/<tag>. The suite and a real first start run there on Linux, Windows
+# and macOS, and report the public-ci/release status on the tagged commit. That status
+# succeeding is what starts this workflow, so nothing is tested here.
+#
+# A status can be set by whoever holds the public repository's status App key, so the
+# status alone authorises nothing: the commit must also carry the v* tag that names its
+# version, and only a maintainer can push a tag. An ordinary pull request sets
+# public-ci, never public-ci/release.
+#
+# The tag's message becomes the release notes. The built tree is pushed to the plugin
+# repository with the PLUGIN_DEPLOY_KEY secret (write access to that repository only).
+# Claude Code and Codex update from its main branch on their own; its own workflow
+# creates the GitHub Release that Claude Desktop downloads from.
+on:
+  status:
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_REPOSITORY: MemorySafe-Labs/memorysafe-plugin
+  SHA: ${{ github.event.sha }}
+
+jobs:
+  publish:
+    # The lock is on the job, not the workflow. Every commit status on the repository
+    # starts a run of this workflow and the if: below skips it; a workflow-level group is
+    # taken before that if: is evaluated, and GitHub keeps one pending run per group, so
+    # a burst of statuses could cancel the pending run that carries the real
+    # public-ci/release success.
+    concurrency:
+      group: release
+      cancel-in-progress: false
+    if: >-
+      github.repository == 'MemorySafe-Labs/memorysafe'
+      && github.event.context == 'public-ci/release'
+      && github.event.state == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # A status run starts on the default branch whatever commit the status is on.
+          ref: ${{ github.event.sha }}
+          fetch-depth: 0
+      - name: The commit carries the tag that names its version, on main
+        run: |
+          git fetch --quiet --force --tags origin
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
+          tag="v$version"
+          if [ "$(git rev-parse --verify --quiet "refs/tags/$tag^{commit}")" != "$SHA" ]; then
+            echo "::error::$SHA is version $version but does not carry the tag $tag, so it is not a release."
+            exit 1
+          fi
+          if ! git merge-base --is-ancestor HEAD origin/main; then
+            echo "::error::$tag is not on main. Push the branch with the tag: git push --atomic origin main $tag"
+            exit 1
+          fi
+          echo "TAG=$tag" >> "$GITHUB_ENV"
+      - uses: astral-sh/setup-uv@v6
+      - name: Install
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install --python .venv/bin/python -e .
+      - name: Release notes from the tag message
+        run: |
+          # actions/checkout can leave a lightweight copy of an annotated tag.
+          git fetch --quiet --force origin "refs/tags/$TAG:refs/tags/$TAG"
+          if [ "$(git cat-file -t "refs/tags/$TAG")" = tag ]; then
+            git tag --list --format='%(contents:subject)%0a%0a%(contents:body)' "$TAG" > "$RUNNER_TEMP/notes.md"
+          else
+            : > "$RUNNER_TEMP/notes.md"
+          fi
+          cat "$RUNNER_TEMP/notes.md"
+      - name: Use the deploy key
+        env:
+          DEPLOY_KEY: ${{ secrets.PLUGIN_DEPLOY_KEY }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::The PLUGIN_DEPLOY_KEY secret is missing. Add it as an Actions secret in this repository."
+            exit 1
+          fi
+          install -d -m 700 "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$HOME/.ssh/memorysafe-plugin"
+          chmod 600 "$HOME/.ssh/memorysafe-plugin"
+          # GitHub's published host key (gh api meta), pinned instead of scanned.
+          echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl' > "$HOME/.ssh/known_hosts_github"
+          echo "GIT_SSH_COMMAND=ssh -i $HOME/.ssh/memorysafe-plugin -o IdentitiesOnly=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile=$HOME/.ssh/known_hosts_github" >> "$GITHUB_ENV"
+      - name: Publish
+        env:
+          GIT_AUTHOR_NAME: github-actions[bot]
+          GIT_AUTHOR_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+          GIT_COMMITTER_NAME: github-actions[bot]
+          GIT_COMMITTER_EMAIL: 41898282+github-actions[bot]@users.noreply.github.com
+        run: |
+          git clone --quiet "git@github.com:$PUBLIC_REPOSITORY.git" "$RUNNER_TEMP/public"
+          .venv/bin/python scripts/release_plugin.py --dist-checkout "$RUNNER_TEMP/public" \
+            --output-dir "$RUNNER_TEMP/dist" --tag "$TAG" --notes-file "$RUNNER_TEMP/notes.md" --push
+      - name: Wait for the public release
+        run: |
+          # The public repository's workflow creates it from the pushed asset branch.
+          url="https://github.com/$PUBLIC_REPOSITORY/releases/download/$TAG/memorysafe-claude-desktop.mcpb"
+          for _ in $(seq 60); do
+            if curl --silent --fail --location --head --output /dev/null "$url"; then
+              echo "Published $TAG: https://github.com/$PUBLIC_REPOSITORY/releases/tag/$TAG" | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::$url did not appear. Check the Release workflow in $PUBLIC_REPOSITORY."
+          exit 1
