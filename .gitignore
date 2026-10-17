@@ -1,0 +1,30 @@
+.venv/
+.venv-python310-failed/
+.secrets/
+bin/
+vendor/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+data/*.sqlite3
+data/*.sqlite3-*
+build/
+dist/
+
+# Per-machine generated state: tunnel ids, org/workspace ids, absolute paths, logs.
+runtime-state/
+config/tunnel-client/
+
+# Editor/OS junk and in-place backups. The .before-fixes and .bak-* files were left by
+# a one-off patch script; they are kept on disk deliberately and are not history.
+.DS_Store
+*.before-fixes
+*.bak-*
+*.orig
+
+# Session worktrees created by Claude Code.
+.claude/worktrees/
+
+# Local agent workspaces (plans in progress, review packages).
+.superpowers/
