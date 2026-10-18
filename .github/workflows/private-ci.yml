@@ -1,0 +1,39 @@
+name: Private CI
+
+# The one check that cannot run on the public mirror: the hosted edition has a Postgres
+# backend, and the code it tests is never published. So it runs here, in the private
+# repository, on a billed runner -- which is why it is Linux only, unit tests only, and
+# only when something it could break changes. The public suite and the real first start
+# run for free on the public mirror (candidate.yml), so nothing here repeats them.
+on:
+  pull_request:
+    paths: ["private/**", "src/**", "tests/**", "pyproject.toml", ".github/workflows/private-ci.yml"]
+
+jobs:
+  hosted:
+    # The public repository never starts this: its workflows are published, its
+    # pull_request trigger never fires, and the code it would test is not there.
+    if: github.repository == 'MemorySafe-Labs/memorysafe'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 12
+    env:
+      MEMORYSAFE_TEST_POSTGRES_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      # Fail, don't skip, if the database or its driver is missing.
+      MEMORYSAFE_REQUIRE_POSTGRES: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install -e . -e private
+      - name: Private tests
+        run: uv run --no-sync python -m unittest discover -s private/tests -t .
