@@ -1,0 +1,203 @@
+{
+ "base": {
+  "heapq": {
+   "self_us": 137,
+   "cum_us": 165,
+   "n": 7
+  },
+  "json": {
+   "self_us": 166,
+   "cum_us": 1454,
+   "n": 7
+  },
+  "memorysafe_chatgpt": {
+   "self_us": 80,
+   "cum_us": 80,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends": {
+   "self_us": 164,
+   "cum_us": 164,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends.sqlite": {
+   "self_us": 231,
+   "cum_us": 231,
+   "n": 7
+  },
+  "memorysafe_chatgpt.lifecycle": {
+   "self_us": 4222,
+   "cum_us": 4378,
+   "n": 7
+  },
+  "memorysafe_chatgpt.storage": {
+   "self_us": 1542,
+   "cum_us": 29627,
+   "n": 7
+  },
+  "memorysafe_chatgpt.token_metrics": {
+   "self_us": 215,
+   "cum_us": 9745,
+   "n": 7
+  },
+  "re": {
+   "self_us": 445,
+   "cum_us": 5068,
+   "n": 7
+  },
+  "sqlite3": {
+   "self_us": 143,
+   "cum_us": 2000,
+   "n": 7
+  },
+  "tiktoken": {
+   "self_us": 163,
+   "cum_us": 8091,
+   "n": 7
+  }
+ },
+ "r13off": {
+  "heapq": {
+   "self_us": 145,
+   "cum_us": 181,
+   "n": 7
+  },
+  "json": {
+   "self_us": 197,
+   "cum_us": 1530,
+   "n": 7
+  },
+  "memorysafe_chatgpt": {
+   "self_us": 89,
+   "cum_us": 89,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends": {
+   "self_us": 170,
+   "cum_us": 170,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends.sqlite": {
+   "self_us": 240,
+   "cum_us": 240,
+   "n": 7
+  },
+  "memorysafe_chatgpt.gate_flags": {
+   "self_us": 105,
+   "cum_us": 105,
+   "n": 7
+  },
+  "memorysafe_chatgpt.lifecycle": {
+   "self_us": 4326,
+   "cum_us": 4524,
+   "n": 7
+  },
+  "memorysafe_chatgpt.storage": {
+   "self_us": 1581,
+   "cum_us": 30018,
+   "n": 7
+  },
+  "memorysafe_chatgpt.token_metrics": {
+   "self_us": 248,
+   "cum_us": 9956,
+   "n": 7
+  },
+  "re": {
+   "self_us": 413,
+   "cum_us": 4779,
+   "n": 7
+  },
+  "sqlite3": {
+   "self_us": 130,
+   "cum_us": 1936,
+   "n": 7
+  },
+  "tiktoken": {
+   "self_us": 153,
+   "cum_us": 8261,
+   "n": 7
+  }
+ },
+ "r13on": {
+  "bisect": {
+   "self_us": 121,
+   "cum_us": 151,
+   "n": 7
+  },
+  "heapq": {
+   "self_us": 135,
+   "cum_us": 168,
+   "n": 7
+  },
+  "json": {
+   "self_us": 179,
+   "cum_us": 1461,
+   "n": 7
+  },
+  "memorysafe_chatgpt": {
+   "self_us": 92,
+   "cum_us": 92,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends": {
+   "self_us": 169,
+   "cum_us": 169,
+   "n": 7
+  },
+  "memorysafe_chatgpt.backends.sqlite": {
+   "self_us": 238,
+   "cum_us": 238,
+   "n": 7
+  },
+  "memorysafe_chatgpt.gate_flags": {
+   "self_us": 101,
+   "cum_us": 101,
+   "n": 7
+  },
+  "memorysafe_chatgpt.gates": {
+   "self_us": 588,
+   "cum_us": 738,
+   "n": 7
+  },
+  "memorysafe_chatgpt.gates_r6": {
+   "self_us": 581,
+   "cum_us": 581,
+   "n": 7
+  },
+  "memorysafe_chatgpt.gates_stale": {
+   "self_us": 143,
+   "cum_us": 143,
+   "n": 7
+  },
+  "memorysafe_chatgpt.lifecycle": {
+   "self_us": 4164,
+   "cum_us": 4380,
+   "n": 7
+  },
+  "memorysafe_chatgpt.storage": {
+   "self_us": 1620,
+   "cum_us": 29742,
+   "n": 7
+  },
+  "memorysafe_chatgpt.token_metrics": {
+   "self_us": 228,
+   "cum_us": 9823,
+   "n": 7
+  },
+  "re": {
+   "self_us": 420,
+   "cum_us": 4967,
+   "n": 7
+  },
+  "sqlite3": {
+   "self_us": 136,
+   "cum_us": 1968,
+   "n": 7
+  },
+  "tiktoken": {
+   "self_us": 147,
+   "cum_us": 8089,
+   "n": 7
+  }
+ }
+}

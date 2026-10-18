@@ -1,0 +1,26 @@
+Realistic assistant-memory benchmark: 16 weeks, capacity 200, labels=realistic, seeds 100..104 (5). Synthetic; internal design evidence only.
+
+  metric                                         shipped          fifo      gate_cap  gate_cap+sur     unbounded
+  recall hit: preference (up)                      80.7%         71.5%         81.6%         82.4%         81.6%
+  recall hit: project fact (up)                    97.7%         85.2%         99.0%         99.3%         99.7%
+  recall hit: evolving (current value) (up)         81.6%         80.6%         83.3%         83.3%         83.3%
+  recall hit: rare-critical (up)                  100.0%         25.0%        100.0%        100.0%        100.0%
+  recall hit: repeated-mention facts (up)          94.4%         91.4%         95.4%         95.4%         95.4%
+  rare-critical survival (end) (up)               100.0%         13.3%        100.0%        100.0%        100.0%
+  latest-fact correct (top-1) (up)                 46.2%         60.3%         47.6%         47.6%         47.6%
+  stale-fact leakage (top-1) (down)                32.6%         11.3%         32.6%         34.2%         32.6%
+  wrong merges per run (down)                       0.00          0.00          0.00          0.00          0.00
+  throwaways retained (down)                       26.2%         38.8%         25.9%         25.9%         57.6%
+  throwaway share of final store                   48.7%         72.1%         48.2%         48.2%         66.6%
+  useful facts still active (end)                  95.5%         66.2%         97.0%         97.3%         97.9%
+  same-fact merges per run                          1.60          1.60          1.60          2.40          1.60
+  throwaway-into-throwaway merges                 141.20        134.60        136.60        137.60        157.80
+  active at end                                   200.00        200.00        200.00        200.00        321.80
+  write latency mean ms                             2.71          2.51          2.78          2.99          2.57
+  write latency p95 ms                              5.07          4.49          5.28          5.98          5.39
+  (change queries per run, used for latest-fact / stale-leak: 40.6)
+
+  verdict fifo          : worse           faster=True smarter=False better=['latest_fact_correct', 'stale_leak'] worse=['hit_preference', 'hit_project', 'hit_critical', 'critical_survival', 'throwaways_retained'] speed diff vs shipped -0.198 ms/write
+  verdict gate_cap      : exploratory     faster=False smarter=False better=- worse=- speed diff vs shipped 0.074 ms/write
+  verdict gate_cap+sur  : exploratory     faster=False smarter=False better=- worse=- speed diff vs shipped 0.284 ms/write
+TUNE_DONE

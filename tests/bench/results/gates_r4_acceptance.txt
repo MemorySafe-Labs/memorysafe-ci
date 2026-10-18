@@ -1,0 +1,35 @@
+Temp store /tmp/ms-gates-acceptance-9hpk7myb/data/acceptance.sqlite3 with 46 memories (46 active), capacity 24. No server, no port.
+  [PASS] 1 dry run exits 0 and plans moves -- 22 planned moves, 6 merge proposals; stderr=
+  [PASS] 1 dry run: sqlite file sha256 identical -- f09271d32c06e223
+  [PASS] 1 dry run: every table dump identical -- decision_events=b7bf3fdc, memories=e470b221, memory_relations=4f53cda1, settings=4f53cda1
+  [PASS] 1 dry run: directory listing (names and sizes, incl. -wal/-shm/snapshots) identical -- [('acceptance.sqlite3', 81920)]
+  [PASS] 1 dry run is repeatable (same plan twice)
+  [PASS] 2 apply exits 0
+  [PASS] 2 apply report == dry-run plan (all fields except 'applied')
+  [PASS] 2 memories that left active recall == planned moves -- 22 moved
+  [PASS] 2 moved rows are state 'evicted', nothing deleted
+  [PASS] 2 every other memory row is byte-identical -- 24 rows compared
+  [PASS] 2 moved rows differ only in state and updated_at
+  [PASS] 2 earlier history untouched (append-only)
+  [PASS] 2 one EVICT event per planned move, with the planned reason
+  [PASS] 2 one PROPOSE_MERGE event per proposal, with the proposed reason
+  [PASS] 2 nothing was merged: both rows of every proposal are still active and unchanged -- 12 rows
+  [PASS] 2 relations table unchanged by apply
+  [PASS] 2 a second plan has nothing left to move -- active 24
+  [PASS] 3 each restored memory equals its pre-apply row (only updated_at differs) -- 22 restored; sample []
+  [PASS] 3 active set after restoring all == active set before
+  [PASS] 3 non-moved memories still identical
+  [PASS] 3 relations table identical to before
+  [PASS] 3 history is append-only: one RESTORE event per restored memory
+  [PASS] 4 surprise-gate MERGE keeps the longer wording in the kept memory and the other wording in history -- decision=MERGE
+  [PASS] 4 the merge adds exactly one row: a hidden copy of the write, state 'evicted' (out of recall, nothing lost) -- copy MS-20261004-52A25A29
+  [PASS] 4 a MERGE link (old = kept memory, new = copy, status 'merged') and an event are written
+  [PASS] 4 restore without --confirm: sqlite file sha256, every table dump and directory listing identical -- 9974de48bb4c0196
+  [PASS] 4 restore without --confirm reports the planned undo (kept memory, columns) -- columns ['content', 'normalized_content', 'updated_at']
+  [PASS] 4 restore --confirm: the undo applied == the undo planned, and exactly the planned columns of the kept memory changed -- changed ['content', 'normalized_content', 'updated_at']
+  [PASS] 4 round trip: the kept memory equals its row from before the merge in every column
+  [PASS] 4 round trip: every other earlier memory unchanged; the write is back as an ordinary active memory
+  [PASS] 4 link closed ('undone'); history append-only (earlier events identical, a RESTORE event added for the copy)
+  [PASS] 4 a kept memory changed after the merge is left as it is; the copy is still restored -- The memory is back in active recall. It was a merge copy: the memory it was merg
+
+32/32 required checks passed

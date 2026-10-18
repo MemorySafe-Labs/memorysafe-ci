@@ -1,0 +1,8 @@
+N=200 gate_cap round3-vs-round4(with sidecar): IDENTICAL (40 operations, 224 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 224 rows)
+N=200 gate_cap+sur round3-vs-round4(with sidecar): IDENTICAL (40 operations, 224 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 224 rows)
+N=1000 gate_cap round3-vs-round4(with sidecar): IDENTICAL (40 operations, 1024 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 1024 rows)
+N=1000 gate_cap+sur round3-vs-round4(with sidecar): IDENTICAL (40 operations, 1024 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 1024 rows)
+N=5000 gate_cap round3-vs-round4(with sidecar): IDENTICAL (40 operations, 5022 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 5022 rows)
+N=5000 gate_cap+sur round3-vs-round4(with sidecar): IDENTICAL (40 operations, 5022 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (40 operations, 5022 rows)
+N=10000 gate_cap round3-vs-round4(with sidecar): IDENTICAL (24 operations, 10011 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (24 operations, 10011 rows)
+N=10000 gate_cap+sur round3-vs-round4(with sidecar): IDENTICAL (24 operations, 10011 rows) | round3-vs-round4(MEMORYSAFE_GATE_PERSIST=0): IDENTICAL (24 operations, 10011 rows)

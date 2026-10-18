@@ -1,0 +1,46 @@
+Write-path profile: 5 fresh-process runs x 30 writes per arm; wall-clock ms per write.
+
+N = 200 active memories (cap = N for capped arms; template built in 0.0s)
+  arm                 mean ms   p95 ms  1st write  exit save
+  nogate                 3.54     5.39      17.39       0.02
+  shipped                4.19     6.34      19.46       0.01
+  gate_cap               4.12     6.01      19.83       1.39
+  gate_sur               3.75     5.16      18.91       0.01
+  gate_cap+sur           4.62     6.57      21.93       1.45
+  gate_cap@warm          4.39     6.02      15.43       1.72
+  gate_cap+sur@warm      4.59     6.51      15.21       1.49
+  consolidate dry run (cap N/2, propose merges): 8 ms, 100 moves, 5 proposals
+
+N = 1000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm                 mean ms   p95 ms  1st write  exit save
+  nogate                 8.72    14.52      91.38       0.02
+  shipped               10.96    18.96      98.01       0.02
+  gate_cap               9.85    17.19     105.67       3.10
+  gate_sur               9.02    15.45      90.86       0.02
+  gate_cap+sur          10.43    18.74     102.35       3.19
+  gate_cap@warm         12.34    22.78      80.78       3.55
+  gate_cap+sur@warm     11.37    19.52      77.70       3.16
+  consolidate dry run (cap N/2, propose merges): 92 ms, 500 moves, 70 proposals
+
+N = 5000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm                 mean ms   p95 ms  1st write  exit save
+  nogate                15.57    28.15     177.40       0.03
+  shipped               26.13    42.03     199.86       0.02
+  gate_cap              19.29    35.16     250.36      11.93
+  gate_sur              15.90    28.19     180.29       0.02
+  gate_cap+sur          19.90    36.59     250.99      12.77
+  gate_cap@warm         22.15    43.10     152.84      13.13
+  gate_cap+sur@warm     22.08    43.13     153.71      11.49
+  consolidate dry run (cap N/2, propose merges): 447 ms, 2500 moves, 385 proposals
+
+N = 10000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm                 mean ms   p95 ms  1st write  exit save
+  nogate                18.27    30.23      88.93       0.02
+  shipped               70.81   107.91     131.86       0.02
+  gate_cap              29.58    51.39     222.19      21.91
+  gate_sur              18.69    29.51      88.64       0.02
+  gate_cap+sur          29.72    46.28     216.05      20.51
+  gate_cap@warm         28.64    74.75      71.00      20.06
+  gate_cap+sur@warm     29.83    75.34      71.41      20.48
+  consolidate dry run (cap N/2, propose merges): 1603 ms, 5000 moves, 769 proposals
+

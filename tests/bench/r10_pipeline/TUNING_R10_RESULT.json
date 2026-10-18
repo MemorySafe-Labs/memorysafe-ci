@@ -1,0 +1,329 @@
+{
+ "baselines": {
+  "shipped": {
+   "real_stale_leak": 0.4531278896579334,
+   "real_latest": 0.36967310935996567,
+   "status_latest": 0.515625
+  },
+  "r9": {
+   "real_stale_leak": 0.23484199072936499,
+   "real_latest": 0.5240544335964261,
+   "status_latest": 0.515625,
+   "goal_serving": 0.6458333333333334
+  }
+ },
+ "grid": [
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.140625,
+   "timestale_found": 0.4375,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 21,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.140625,
+   "timestale_found": 0.4375,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.140625,
+   "timestale_found": 0.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 30,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.140625,
+   "timestale_found": 0.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.40625,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 7,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.203125,
+   "timestale_found": 0.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.05,
+   "J": 0.9499725865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.875,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.15,
+   "J": 0.9812225865232478,
+   "feasible": false,
+   "failed": [
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 0.890625,
+   "unrelated_top1": 0.421875,
+   "timestale_found": 1.0,
+   "goal_serving": 0.6145833333333334
+  },
+  {
+   "STALE_DAYS": 45,
+   "STALE_NEWER_DAYS": 14,
+   "STALE_PENALTY": 0.3,
+   "J": 1.1999725865232478,
+   "feasible": false,
+   "failed": [
+    "timestale_found>=0.95",
+    "goal_serving>=r9-1pp"
+   ],
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "status_latest": 1.0,
+   "unrelated_top1": 0.21875,
+   "timestale_found": 0.0,
+   "goal_serving": 0.6145833333333334
+  }
+ ],
+ "n_feasible": 0,
+ "picked": {
+  "STALE_DAYS": 30,
+  "STALE_NEWER_DAYS": 14,
+  "STALE_PENALTY": 0.15,
+  "J": 0.9812225865232478,
+  "feasible": false,
+  "failed": [
+   "goal_serving>=r9-1pp"
+  ],
+  "real_stale_leak": 0.28098630914517414,
+  "real_latest": 0.48095889566842187,
+  "status_latest": 0.890625,
+  "unrelated_top1": 0.421875,
+  "timestale_found": 1.0,
+  "goal_serving": 0.6145833333333334
+ },
+ "default_feasible": false
+}

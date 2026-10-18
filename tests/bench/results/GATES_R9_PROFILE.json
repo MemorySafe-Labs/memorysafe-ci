@@ -1,0 +1,260 @@
+{
+  "interleaved": true,
+  "order_seed": 9,
+  "runs": 12,
+  "sizes": {
+    "1000": {
+      "arms": {
+        "r7x_nogoal_useful_ext": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 125.9,
+          "first_write_runs_ms": [
+            144.9,
+            130.3,
+            140.5,
+            107.2,
+            27.0,
+            111.2,
+            132.7,
+            141.3,
+            132.5,
+            140.4,
+            136.0,
+            166.8
+          ],
+          "mean_ms": 20.09,
+          "p95_ms": 32.93,
+          "run_means_ms": [
+            17.189,
+            17.988,
+            20.642,
+            15.702,
+            24.739,
+            20.745,
+            19.597,
+            23.217,
+            19.121,
+            20.63,
+            20.31,
+            21.235
+          ],
+          "samples": 360
+        },
+        "shipped": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 116.46,
+          "first_write_runs_ms": [
+            128.9,
+            125.1,
+            140.9,
+            102.7,
+            15.7,
+            103.3,
+            131.6,
+            123.5,
+            133.9,
+            122.9,
+            142.4,
+            126.5
+          ],
+          "mean_ms": 20.86,
+          "p95_ms": 33.29,
+          "run_means_ms": [
+            18.372,
+            20.311,
+            24.406,
+            15.865,
+            19.939,
+            21.336,
+            21.168,
+            23.561,
+            19.209,
+            20.799,
+            23.712,
+            21.673
+          ],
+          "samples": 360
+        }
+      },
+      "order": [
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ]
+      ]
+    },
+    "5000": {
+      "arms": {
+        "r7x_nogoal_useful_ext": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 269.12,
+          "first_write_runs_ms": [
+            324.8,
+            290.2,
+            287.1,
+            253.6,
+            68.7,
+            243.1,
+            286.1,
+            286.4,
+            283.3,
+            307.2,
+            311.1,
+            287.8
+          ],
+          "mean_ms": 35.94,
+          "p95_ms": 54.6,
+          "run_means_ms": [
+            36.126,
+            35.285,
+            35.896,
+            30.598,
+            37.592,
+            36.408,
+            37.259,
+            37.571,
+            35.444,
+            36.937,
+            32.268,
+            39.888
+          ],
+          "samples": 360
+        },
+        "shipped": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 236.04,
+          "first_write_runs_ms": [
+            271.0,
+            256.6,
+            302.7,
+            214.9,
+            34.6,
+            217.2,
+            259.3,
+            255.1,
+            250.1,
+            262.3,
+            245.8,
+            262.8
+          ],
+          "mean_ms": 42.15,
+          "p95_ms": 65.13,
+          "run_means_ms": [
+            38.826,
+            41.498,
+            45.695,
+            38.105,
+            43.241,
+            42.553,
+            45.772,
+            43.11,
+            39.108,
+            43.514,
+            39.099,
+            45.33
+          ],
+          "samples": 360
+        }
+      },
+      "order": [
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ]
+      ]
+    }
+  },
+  "writes_per_run": 30
+}

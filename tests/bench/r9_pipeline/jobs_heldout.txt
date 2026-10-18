@@ -1,0 +1,328 @@
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1000 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1001 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1002 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1003 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1004 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1005 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1006 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1007 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1008 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1009 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1010 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1011 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1012 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1013 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1014 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm shipped --seed 1015 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 900 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 901 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 902 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 903 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 904 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 905 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 906 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 907 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 908 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 909 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 910 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 911 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 912 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 913 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 914 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 915 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 916 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 917 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 918 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 919 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 920 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 921 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 922 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 923 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 924 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 925 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 926 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 927 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 928 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 929 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 930 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 931 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 932 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 933 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 934 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 935 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 936 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 937 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 938 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 939 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 940 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 941 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 942 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 943 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 944 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 945 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 946 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 947 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 948 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 949 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 950 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 951 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 952 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 953 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 954 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 955 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 956 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 957 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 958 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 959 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 960 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 961 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 962 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 963 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 964 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 965 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 966 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 967 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 968 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 969 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 970 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 971 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 972 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 973 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 974 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 975 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 976 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 977 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 978 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 979 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 980 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 981 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 982 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 983 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 984 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 985 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 986 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 987 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 988 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 989 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 990 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 991 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 992 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 993 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 994 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 995 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 996 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 997 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 998 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm shipped --seed 999 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm shipped --seed 1115 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm shipped --seed 1115 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm shipped --seed 1115 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1000 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1001 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1002 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1003 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1004 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1005 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1006 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1007 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1008 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1009 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1010 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1011 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1012 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1013 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1014 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench real --arm r7x_nogoal_useful_ext --seed 1015 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 900 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 901 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 902 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 903 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 904 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 905 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 906 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 907 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 908 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 909 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 910 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 911 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 912 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 913 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 914 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 915 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 916 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 917 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 918 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 919 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 920 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 921 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 922 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 923 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 924 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 925 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 926 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 927 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 928 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 929 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 930 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 931 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 932 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 933 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 934 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 935 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 936 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 937 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 938 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 939 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 940 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 941 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 942 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 943 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 944 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 945 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 946 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 947 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 948 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 949 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 950 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 951 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 952 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 953 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 954 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 955 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 956 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 957 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 958 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 959 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 960 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 961 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 962 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 963 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 964 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 965 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 966 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 967 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 968 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 969 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 970 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 971 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 972 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 973 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 974 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 975 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 976 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 977 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 978 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 979 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 980 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 981 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 982 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 983 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 984 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 985 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 986 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 987 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 988 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 989 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 990 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 991 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 992 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 993 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 994 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 995 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 996 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 997 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 998 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench goal --arm r7x_nogoal_useful_ext --seed 999 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting tell --arm r7x_nogoal_useful_ext --seed 1115 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell --arm r7x_nogoal_useful_ext --seed 1115 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1100 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1101 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1102 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1103 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1104 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1105 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1106 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1107 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1108 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1109 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1110 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1111 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1112 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1113 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1114 --out /workspace/gates_proto/r9/heldout
+python /workspace/gates_proto/repo/tests/bench/gates_r7_run.py --bench hard --setting notell_late --arm r7x_nogoal_useful_ext --seed 1115 --out /workspace/gates_proto/r9/heldout

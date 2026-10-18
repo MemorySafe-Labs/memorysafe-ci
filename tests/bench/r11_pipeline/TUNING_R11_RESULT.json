@@ -1,0 +1,271 @@
+{
+ "baselines": {
+  "shipped": {
+   "goal_serving": 0.3854166666666667,
+   "goal_distractor": 0.3125,
+   "real_stale_leak": 0.4531278896579334,
+   "real_latest": 0.36967310935996567,
+   "real_throwaways": 0.2446236559139785,
+   "real_hit_critical": 0.875
+  },
+  "r10_stale": {
+   "goal_serving": 0.6145833333333334,
+   "goal_distractor": 0.3125,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  }
+ },
+ "grid": [
+  {
+   "GOAL_ENTITY": 0,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8229166666666666,
+   "goal_serving_untagged": 0.6208333333333333,
+   "goal_distractor": 0.34375,
+   "goal_distractor_untagged": 0.3018939393939394,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 0,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8333333333333334,
+   "goal_serving_untagged": 0.6416666666666666,
+   "goal_distractor": 0.3541666666666667,
+   "goal_distractor_untagged": 0.31325757575757573,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 0,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8229166666666666,
+   "goal_serving_untagged": 0.6208333333333333,
+   "goal_distractor": 0.34375,
+   "goal_distractor_untagged": 0.3018939393939394,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 0,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8333333333333334,
+   "goal_serving_untagged": 0.6416666666666666,
+   "goal_distractor": 0.3541666666666667,
+   "goal_distractor_untagged": 0.31325757575757573,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 0,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8541666666666666,
+   "goal_serving_untagged": 0.671875,
+   "goal_distractor": 0.46875,
+   "goal_distractor_untagged": 0.4327651515151515,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 0,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8645833333333334,
+   "goal_serving_untagged": 0.703125,
+   "goal_distractor": 0.5,
+   "goal_distractor_untagged": 0.4668560606060606,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 0,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8541666666666666,
+   "goal_serving_untagged": 0.671875,
+   "goal_distractor": 0.46875,
+   "goal_distractor_untagged": 0.4327651515151515,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 0,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8645833333333334,
+   "goal_serving_untagged": 0.703125,
+   "goal_distractor": 0.5,
+   "goal_distractor_untagged": 0.4668560606060606,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8541666666666666,
+   "goal_serving_untagged": 0.671875,
+   "goal_distractor": 0.4166666666666667,
+   "goal_distractor_untagged": 0.37670454545454546,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 0,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8645833333333334,
+   "goal_serving_untagged": 0.703125,
+   "goal_distractor": 0.4479166666666667,
+   "goal_distractor_untagged": 0.4107954545454545,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 2,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8541666666666666,
+   "goal_serving_untagged": 0.671875,
+   "goal_distractor": 0.4166666666666667,
+   "goal_distractor_untagged": 0.37670454545454546,
+   "real_stale_leak": 0.2868002626335462,
+   "real_latest": 0.4751449421800498,
+   "real_throwaways": 0.25,
+   "real_hit_critical": 1.0
+  },
+  {
+   "GOAL_ENTITY": 1,
+   "GOAL_KEYWORD": 1,
+   "TAG_EVIDENCE": 1,
+   "RECONF_MIN": 99,
+   "feasible": false,
+   "rest_ok": true,
+   "failed": [
+    "distractor<=shipped+1.5pp"
+   ],
+   "goal_serving": 0.8645833333333334,
+   "goal_serving_untagged": 0.703125,
+   "goal_distractor": 0.4479166666666667,
+   "goal_distractor_untagged": 0.4107954545454545,
+   "real_stale_leak": 0.28098630914517414,
+   "real_latest": 0.48095889566842187,
+   "real_throwaways": 0.24899193548387097,
+   "real_hit_critical": 1.0
+  }
+ ],
+ "n_feasible": 0,
+ "picked": {
+  "GOAL_ENTITY": 0,
+  "GOAL_KEYWORD": 1,
+  "TAG_EVIDENCE": 0,
+  "RECONF_MIN": 2,
+  "feasible": false,
+  "rest_ok": true,
+  "failed": [
+   "distractor<=shipped+1.5pp"
+  ],
+  "goal_serving": 0.8229166666666666,
+  "goal_serving_untagged": 0.6208333333333333,
+  "goal_distractor": 0.34375,
+  "goal_distractor_untagged": 0.3018939393939394,
+  "real_stale_leak": 0.2868002626335462,
+  "real_latest": 0.4751449421800498,
+  "real_throwaways": 0.25,
+  "real_hit_critical": 1.0
+ },
+ "how": "no feasible point: lowest distractor retention among points meeting constraints 2-6"
+}

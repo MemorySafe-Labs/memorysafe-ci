@@ -1,0 +1,356 @@
+{
+  "interleaved": true,
+  "order_seed": 10,
+  "runs": 12,
+  "sizes": {
+    "1000": {
+      "arms": {
+        "r10_stale": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 126.19,
+          "first_write_runs_ms": [
+            133.6,
+            135.7,
+            187.0,
+            113.8,
+            18.6,
+            117.8,
+            132.1,
+            138.5,
+            133.1,
+            138.5,
+            129.9,
+            135.6
+          ],
+          "mean_ms": 20.79,
+          "p95_ms": 32.07,
+          "run_means_ms": [
+            19.362,
+            18.898,
+            20.816,
+            15.519,
+            19.363,
+            21.843,
+            25.795,
+            25.578,
+            19.64,
+            20.398,
+            21.006,
+            21.238
+          ],
+          "samples": 360
+        },
+        "r7x_nogoal_useful_ext": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 126.43,
+          "first_write_runs_ms": [
+            228.3,
+            123.2,
+            131.5,
+            108.9,
+            21.2,
+            106.0,
+            130.0,
+            135.3,
+            130.1,
+            142.6,
+            124.1,
+            135.9
+          ],
+          "mean_ms": 20.6,
+          "p95_ms": 31.73,
+          "run_means_ms": [
+            16.774,
+            24.316,
+            24.483,
+            17.773,
+            21.647,
+            24.873,
+            19.779,
+            19.056,
+            18.338,
+            21.13,
+            19.345,
+            19.646
+          ],
+          "samples": 360
+        },
+        "shipped": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 114.56,
+          "first_write_runs_ms": [
+            134.5,
+            120.5,
+            121.7,
+            114.0,
+            14.8,
+            111.2,
+            130.5,
+            123.9,
+            120.3,
+            132.1,
+            121.5,
+            129.6
+          ],
+          "mean_ms": 20.01,
+          "p95_ms": 30.54,
+          "run_means_ms": [
+            18.127,
+            19.384,
+            20.885,
+            16.393,
+            20.228,
+            22.479,
+            20.864,
+            21.986,
+            19.093,
+            20.781,
+            19.56,
+            20.378
+          ],
+          "samples": 360
+        }
+      },
+      "order": [
+        [
+          "r10_stale",
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "r10_stale",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r10_stale",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped",
+          "r10_stale"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped",
+          "r10_stale"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped",
+          "r10_stale"
+        ],
+        [
+          "shipped",
+          "r10_stale",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r10_stale",
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r10_stale",
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "r10_stale",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r10_stale",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r10_stale",
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ]
+      ]
+    },
+    "5000": {
+      "arms": {
+        "r10_stale": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 265.36,
+          "first_write_runs_ms": [
+            272.1,
+            298.4,
+            297.5,
+            246.0,
+            64.8,
+            245.0,
+            297.4,
+            286.0,
+            294.3,
+            279.3,
+            288.4,
+            315.2
+          ],
+          "mean_ms": 35.28,
+          "p95_ms": 52.56,
+          "run_means_ms": [
+            29.157,
+            34.28,
+            34.771,
+            38.809,
+            39.216,
+            37.696,
+            36.244,
+            37.504,
+            33.062,
+            34.601,
+            30.367,
+            37.662
+          ],
+          "samples": 360
+        },
+        "r7x_nogoal_useful_ext": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 259.63,
+          "first_write_runs_ms": [
+            275.4,
+            281.0,
+            327.0,
+            237.6,
+            67.8,
+            257.9,
+            282.9,
+            287.9,
+            268.7,
+            268.2,
+            285.1,
+            276.0
+          ],
+          "mean_ms": 34.78,
+          "p95_ms": 52.65,
+          "run_means_ms": [
+            28.25,
+            35.477,
+            37.377,
+            33.172,
+            40.949,
+            37.8,
+            35.031,
+            36.721,
+            31.063,
+            34.646,
+            29.865,
+            37.063
+          ],
+          "samples": 360
+        },
+        "shipped": {
+          "exit_save_mean_ms": 0.02,
+          "files_left": [],
+          "first_write_mean_ms": 231.7,
+          "first_write_runs_ms": [
+            235.0,
+            238.9,
+            243.8,
+            225.7,
+            33.9,
+            234.1,
+            328.3,
+            257.9,
+            248.3,
+            232.6,
+            247.2,
+            254.8
+          ],
+          "mean_ms": 39.42,
+          "p95_ms": 59.55,
+          "run_means_ms": [
+            34.241,
+            37.443,
+            43.152,
+            34.65,
+            44.841,
+            42.305,
+            45.881,
+            42.963,
+            34.53,
+            39.072,
+            33.693,
+            40.259
+          ],
+          "samples": 360
+        }
+      },
+      "order": [
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped",
+          "r10_stale"
+        ],
+        [
+          "r10_stale",
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ],
+        [
+          "r10_stale",
+          "r7x_nogoal_useful_ext",
+          "shipped"
+        ],
+        [
+          "r10_stale",
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "r7x_nogoal_useful_ext",
+          "shipped",
+          "r10_stale"
+        ],
+        [
+          "r10_stale",
+          "shipped",
+          "r7x_nogoal_useful_ext"
+        ],
+        [
+          "shipped",
+          "r7x_nogoal_useful_ext",
+          "r10_stale"
+        ]
+      ]
+    }
+  },
+  "writes_per_run": 30
+}

@@ -1,0 +1,38 @@
+Write-path profile: 5 fresh-process runs x 30 writes per arm; wall-clock ms per write.
+
+N = 200 active memories (cap = N for capped arms; template built in 0.0s)
+  arm             mean ms   p95 ms  1st write
+  nogate             3.66     5.87      18.51
+  shipped            4.13     6.05      18.88
+  gate_cap           4.29     5.96      19.28
+  gate_sur           3.86     5.71      18.40
+  gate_cap+sur       4.45     6.21      20.07
+  consolidate dry run (cap N/2, propose merges): 15 ms, 100 moves, 5 proposals
+
+N = 1000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm             mean ms   p95 ms  1st write
+  nogate             8.15    13.64      94.05
+  shipped           10.67    21.01      95.43
+  gate_cap           9.78    16.91     100.28
+  gate_sur           8.99    14.70      89.81
+  gate_cap+sur       9.98    16.27      98.28
+  consolidate dry run (cap N/2, propose merges): 150 ms, 500 moves, 70 proposals
+
+N = 5000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm             mean ms   p95 ms  1st write
+  nogate            14.93    26.92     172.81
+  shipped           24.87    43.41     200.39
+  gate_cap          18.61    35.87     259.23
+  gate_sur          15.40    28.94     172.17
+  gate_cap+sur      18.97    35.26     256.91
+  consolidate dry run (cap N/2, propose merges): 974 ms, 2500 moves, 385 proposals
+
+N = 10000 active memories (cap = N for capped arms; template built in 0.0s)
+  arm             mean ms   p95 ms  1st write
+  nogate            17.82    28.56      86.33
+  shipped           65.74   101.41     129.67
+  gate_cap          28.12    44.69     266.10
+  gate_sur          17.69    28.01      89.93
+  gate_cap+sur      29.51    47.02     274.00
+  consolidate dry run (cap N/2, propose merges): 2844 ms, 5000 moves, 769 proposals
+

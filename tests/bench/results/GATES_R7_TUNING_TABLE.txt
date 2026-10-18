@@ -1,0 +1,13 @@
+__h0.20_d0.06_i1                         guard=False net=4 sum_pp=+84.65 distractors=58.3% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.10_d0.06_i1                         guard=False net=4 sum_pp=+84.65 distractors=58.3% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.30_d0.06_i1                         guard=False net=4 sum_pp=+84.65 distractors=58.3% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.20_d0.06_i0                         guard=False net=4 sum_pp=+84.65 distractors=66.7% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.10_d0.06_i0                         guard=False net=4 sum_pp=+84.65 distractors=66.7% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.30_d0.06_i0                         guard=False net=4 sum_pp=+84.65 distractors=66.7% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+35.4 throwaways_retained=-0.5
+__h0.20_d0.03_i1                         guard=False net=4 sum_pp=+83.60 distractors=54.2% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+__h0.10_d0.03_i1                         guard=False net=4 sum_pp=+83.60 distractors=54.2% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+__h0.30_d0.03_i1                         guard=False net=4 sum_pp=+83.60 distractors=54.2% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+__h0.20_d0.03_i0                         guard=False net=4 sum_pp=+83.60 distractors=60.4% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+__h0.10_d0.03_i0                         guard=False net=4 sum_pp=+83.60 distractors=60.4% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+__h0.30_d0.03_i0                         guard=False net=4 sum_pp=+83.60 distractors=60.4% | stale_leak=+21.8 latest_fact_correct=+15.4 hit_critical=+12.5 goal_serving_survival=+34.4 throwaways_retained=-0.5
+CHOSEN __h0.20_d0.06_i1
