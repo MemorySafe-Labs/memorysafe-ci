@@ -1,0 +1,58 @@
+{
+  "artifact_kind": "synthetic_benchmark",
+  "claim_status": "not_external_evidence",
+  "fixtures": "entirely invented; no real person, figure or identifier",
+  "kind": "synthetic_agent_beta_lifecycle",
+  "not_research_continual_learning": true,
+  "ran_at": "2026-09-11T16:35:30+00:00",
+  "correct_contradiction_supersession_rate": 1.0,
+  "false_supersession_rate": 0.0,
+  "recall_of_current_facts": {
+    "toronto_current": true,
+    "contractor_sales_current": true,
+    "patent_still_recalled": true
+  },
+  "retention_of_rare_valid_facts": true,
+  "stale_memory_recall_rate": 0.0,
+  "reversibility_history_completeness": {
+    "superseded_row_inspectable": true,
+    "history_names_replacement": true,
+    "restore_confirmed": true
+  },
+  "duplicate_merging": {
+    "exact_merged": true,
+    "near_merged": false,
+    "kept_one_preference": true
+  },
+  "contradiction_outcomes": [
+    {
+      "old": "I live in Montreal",
+      "new": "I live in Toronto",
+      "lifecycle": "superseded_previous",
+      "old_state": "superseded",
+      "correct": true
+    },
+    {
+      "old": "Robin Dale is an operations contractor",
+      "new": "Robin Dale is a sales contractor",
+      "lifecycle": "superseded_previous",
+      "old_state": "superseded",
+      "correct": true
+    }
+  ],
+  "ambiguous_outcomes": [
+    {
+      "old": "Deadline is 4 November 2026",
+      "new": "Deadline is 28 September 2026",
+      "lifecycle": "needs_review",
+      "old_state": "active",
+      "correct": true
+    }
+  ],
+  "notes": [
+    "Age was backdated on stable and rare facts; none were demoted for age.",
+    "False supersession counts automatic SUPERSEDE on an ambiguous pair, and misses on a clear pair.",
+    "The contractor's title change is expected to supersede the old title in recall.",
+    "near_merged is false because 'concise answers always' scores 0.83, below the 0.88 merge bar."
+  ]
+}
