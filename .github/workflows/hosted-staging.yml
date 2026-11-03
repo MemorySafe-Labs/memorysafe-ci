@@ -1,0 +1,92 @@
+name: Hosted staging
+
+# Deploys the hosted edition to staging on every push to main that changes it.
+on:
+  push:
+    branches: [main]
+    paths: ["private/**", "src/**", "pyproject.toml", ".github/workflows/hosted-staging.yml"]
+
+# A deploy is never cancelled half way: the next one waits.
+concurrency:
+  group: hosted-staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'MemorySafe-Labs/memorysafe'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      SHA: ${{ github.sha }}
+    defaults:
+      run:
+        working-directory: private/infra
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ vars.HOSTED_DEPLOY_ROLE_ARN }}
+          aws-region: ca-central-1
+      - id: ecr
+        uses: aws-actions/amazon-ecr-login@03f1aad4c6c7ffd436567f42f9384779290529bd # v2.1.7
+      - name: Look for the image
+        id: image
+        run: |
+          if aws ecr describe-images --repository-name memorysafe-hosted --image-ids imageTag="$SHA" >/dev/null 2>&1; then
+            echo "built=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "built=false" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.image.outputs.built != 'true'
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - if: steps.image.outputs.built != 'true'
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          file: private/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: ${{ steps.ecr.outputs.registry }}/memorysafe-hosted:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Find the zone
+        id: zone
+        run: python -m memorysafe_infra.deploy zone
+      - name: Wait for the zone
+        if: steps.zone.outputs.zone_id == ''
+        run: echo "::notice::Image pushed; deploys start once the memorysafe.ca zone is in this account."
+      - name: First deploy, with no tasks
+        if: steps.zone.outputs.zone_id != ''
+        env:
+          ZONE: ${{ steps.zone.outputs.zone_id }}
+        run: |
+          rc=0
+          python -m memorysafe_infra.deploy stack-exists staging || rc=$?
+          if [ "$rc" -eq 0 ]; then
+            echo "Staging exists."
+          elif [ "$rc" -eq 1 ]; then
+            npx aws-cdk@2.1146.0 deploy Staging --exclusively --require-approval never -c image="$SHA" -c zone_id="$ZONE" -c desired_count=0
+          else
+            exit "$rc"
+          fi
+      - name: Bootstrap the key
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy bootstrap-key staging
+      - name: Provision
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy provision staging "$SHA"
+      - name: Deploy
+        if: steps.zone.outputs.zone_id != ''
+        env:
+          ZONE: ${{ steps.zone.outputs.zone_id }}
+        run: npx aws-cdk@2.1146.0 deploy Staging --exclusively --require-approval never -c image="$SHA" -c zone_id="$ZONE"
+      - name: Smoke test
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy smoke https://staging.memory.memorysafe.ca "$SHA"
