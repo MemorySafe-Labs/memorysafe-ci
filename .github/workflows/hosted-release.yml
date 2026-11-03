@@ -1,0 +1,77 @@
+name: Hosted release
+
+# Deploys the hosted edition to production from a hosted-v* tag.
+on:
+  push:
+    tags: ["hosted-v*"]
+
+# A deploy is never cancelled half way: the next one waits.
+concurrency:
+  group: hosted-prod
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.repository == 'MemorySafe-Labs/memorysafe'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      SHA: ${{ github.sha }}
+    defaults:
+      run:
+        working-directory: private/infra
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ vars.HOSTED_DEPLOY_ROLE_ARN }}
+          aws-region: ca-central-1
+      - name: Check the tag and the image
+        run: python -m memorysafe_infra.deploy check-release "$GITHUB_REF_NAME" "$SHA"
+      - name: Check the commit is on main
+        run: git merge-base --is-ancestor "$GITHUB_SHA" origin/main
+      - name: Keep the image
+        run: python -m memorysafe_infra.deploy retag "$SHA" "$GITHUB_REF_NAME"
+      - name: Find the zone
+        id: zone
+        run: python -m memorysafe_infra.deploy zone
+      - name: Wait for the zone
+        if: steps.zone.outputs.zone_id == ''
+        run: echo "::notice::Nothing deployed; production deploys start once the memorysafe.ca zone is in this account."
+      - name: First deploy, with no tasks
+        if: steps.zone.outputs.zone_id != ''
+        env:
+          ZONE: ${{ steps.zone.outputs.zone_id }}
+        run: |
+          rc=0
+          python -m memorysafe_infra.deploy stack-exists prod || rc=$?
+          if [ "$rc" -eq 0 ]; then
+            echo "Prod exists."
+          elif [ "$rc" -eq 1 ]; then
+            npx aws-cdk@2.1146.0 deploy Prod --exclusively --require-approval never -c image="$SHA" -c zone_id="$ZONE" -c desired_count=0
+          else
+            exit "$rc"
+          fi
+      - name: Bootstrap the key
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy bootstrap-key prod
+      - name: Provision
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy provision prod "$SHA"
+      - name: Deploy
+        if: steps.zone.outputs.zone_id != ''
+        env:
+          ZONE: ${{ steps.zone.outputs.zone_id }}
+        run: npx aws-cdk@2.1146.0 deploy Prod --exclusively --require-approval never -c image="$SHA" -c zone_id="$ZONE"
+      - name: Smoke test
+        if: steps.zone.outputs.zone_id != ''
+        run: python -m memorysafe_infra.deploy smoke https://memory.memorysafe.ca "$SHA"
