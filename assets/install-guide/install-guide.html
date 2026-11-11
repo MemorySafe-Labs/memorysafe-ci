@@ -1,0 +1,132 @@
+<!doctype html>
+<!-- Source of install-guide.png, the one-image install guide at the top of the public
+     README and the release notes. Render it at 2x with a headless browser, e.g.
+     msedge --headless=new --hide-scrollbars --force-device-scale-factor=2
+            --window-size=1600,760 --screenshot=install-guide.png install-guide.html
+     Every step it shows was walked through on a real Windows 11 machine on 19 Sep. -->
+<html><head><meta charset="utf-8"><title>Install MemorySafe</title>
+<style>
+  :root{--bg:#02070d;--card:#0a1019;--card2:#0f1722;--line:rgba(190,218,245,.13);--text:#f4f7fb;--muted:#8b9aae;--dim:#56657a;
+        --c1:#18eadf;--c2:#25d5f4;--blue:#4b83ff;--green:#52dc88;--amber:#f4b75e;--red:#ff5c7a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1600px;height:760px;overflow:hidden}
+  body{font-family:"Segoe UI Variable Text","Segoe UI",system-ui,sans-serif;color:var(--text);
+    background:radial-gradient(900px 420px at 90% -10%,rgba(24,234,223,.12),transparent 70%),radial-gradient(760px 400px at -5% 115%,rgba(75,131,255,.12),transparent 70%),var(--bg);
+    padding:44px 64px 0}
+  header{display:flex;align-items:center;justify-content:space-between;margin-bottom:34px}
+  .left{display:flex;align-items:center;gap:30px}
+  .logo{height:62px;display:block}
+  .vr{width:1px;height:64px;background:var(--line)}
+  h1{font-family:"Segoe UI Variable Display","Segoe UI",sans-serif;font-size:42px;font-weight:680;letter-spacing:-.02em;line-height:1.05}
+  .sub{font-size:19px;color:var(--muted);margin-top:8px}
+  .sub em{font-style:normal;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:650}
+  .pill{border:1px solid var(--line);border-radius:999px;padding:7px 15px;font-size:14.5px;color:var(--muted);background:rgba(255,255,255,.02)}
+  .pill b{color:var(--text);font-weight:600}
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px}
+  .card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;padding:24px 24px 22px;height:520px;display:flex;flex-direction:column;position:relative}
+  .card:not(:last-child)::after{content:"";position:absolute;right:-19px;top:44px;width:12px;height:12px;border-top:2px solid var(--dim);border-right:2px solid var(--dim);transform:rotate(45deg)}
+  .top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--blue));color:#02070d;display:grid;place-items:center;font-weight:750;font-size:16px;flex:none}
+  .kicker{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600}
+  h2{font-size:25px;font-weight:650;letter-spacing:-.01em;margin-bottom:16px;line-height:1.2}
+  .mock{background:#060a11;border:1px solid var(--line);border-radius:12px;height:206px;padding:13px;margin-bottom:16px;position:relative;overflow:hidden}
+  p{font-size:15.5px;line-height:1.5;color:var(--muted)}
+  p b{color:var(--text);font-weight:600}
+  .spacer{flex:1}
+  .trap,.win{position:relative;margin-top:22px;border-radius:11px;padding:24px 14px 13px;font-size:14.5px;line-height:1.42}
+  .trap{background:rgba(244,183,94,.07);border:1px solid rgba(244,183,94,.3);color:#f3d3a0}
+  .trap b{color:#ffe2b3}
+  .win{background:rgba(82,220,136,.07);border:1px solid rgba(82,220,136,.3);color:#a8efc4}
+  .win b{color:#d2ffe3}
+  .tag{position:absolute;top:-11px;left:12px;transform:rotate(-3deg);background:var(--amber);color:#1b1206;font-size:11.5px;font-weight:800;letter-spacing:.1em;padding:4px 9px;border-radius:5px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+  .win .tag{background:var(--green);color:#04170c}
+  .mono{font-family:"Cascadia Code","Consolas",monospace}
+  /* step 1: pick one */
+  .route{display:flex;flex-direction:column;gap:3px;padding:7px 11px;border-radius:9px;background:var(--card2);border:1px solid var(--line);margin-bottom:6px}
+  .route:last-child{margin-bottom:0}
+  .route .who{font-size:13px;font-weight:650}
+  .route .how{font-size:12px;color:var(--muted);white-space:nowrap}
+  .route .how.mono{font-size:11.5px;color:#cfe3ef}
+  .route.pick{border-color:rgba(24,234,223,.55);box-shadow:0 0 0 1px rgba(24,234,223,.25) inset}
+  .route.pick .who::after{content:" ←";color:var(--c1)}
+  /* step 2: browser */
+  .browser{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card2)}
+  .url{display:flex;align-items:center;gap:8px;padding:9px 12px;border-bottom:1px solid var(--line);font-size:13.5px}
+  .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .pg{padding:14px 12px;display:flex;flex-direction:column;gap:9px;font-size:13px;color:var(--muted)}
+  .track{height:7px;border-radius:99px;background:#1b2533;overflow:hidden}
+  .fill{height:100%;width:68%;background:linear-gradient(90deg,var(--blue),var(--c1));border-radius:99px}
+  .rowx{display:flex;justify-content:space-between}
+  .steps-list{font-size:11.5px;color:var(--dim);letter-spacing:.02em}
+  /* step 3: the panel */
+  .ptitle{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+  .ptitle strong{font-size:13.5px}
+  .ptitle span{font-size:10px;letter-spacing:.08em;color:var(--dim);font-weight:700}
+  .agent{display:flex;justify-content:space-between;align-items:center;padding:6px 11px;border-radius:9px;background:var(--card2);margin-bottom:6px}
+  .agent:last-child{margin-bottom:0}
+  .agent .nm{font-size:13.5px;font-weight:650}
+  .agent .nt{display:block;font-size:11px;color:var(--dim);font-weight:400;margin-top:2px}
+  .state{font:700 10.5px "Cascadia Code","Consolas",monospace;letter-spacing:.08em;padding:4px 9px;border-radius:6px;white-space:nowrap}
+  .state.on{color:var(--green);border:1px solid rgba(82,220,136,.4)}
+  .state.btn{color:var(--c1);border:1px solid rgba(24,234,223,.55);background:rgba(24,234,223,.1)}
+  .state.btn.hot{background:linear-gradient(90deg,var(--c1),var(--c2));color:#02070d;border-color:transparent}
+  .cursor{position:absolute;right:30px;top:118px;width:18px;height:18px}
+  footer{margin-top:26px;display:flex;justify-content:space-between;font-size:14.5px;color:var(--dim)}
+  footer b{color:var(--muted);font-weight:600}
+</style></head>
+<body>
+<header>
+  <div class="left">
+    <img class="logo" src="memorysafe-logo.png" alt="MemorySafe Labs">
+    <div class="vr"></div>
+    <div><h1>Install MemorySafe once</h1><div class="sub">Every assistant on your computer, one memory. <em>No, you don't install it three times.</em></div></div>
+  </div>
+  <span class="pill"><b>~3 minutes</b>, most of it waiting</span>
+</header>
+
+<section class="steps">
+  <div class="card">
+    <div class="top"><div class="num">1</div><div class="kicker">Pick a favourite</div></div>
+    <h2>Install it in one assistant</h2>
+    <div class="mock">
+      <div class="route pick"><span class="who">Claude Desktop</span><span class="how">Settings › Extensions › Advanced settings › Install Extension…</span></div>
+      <div class="route"><span class="who">Claude Code</span><span class="how mono">claude plugin install memorysafe@memorysafe</span></div>
+      <div class="route"><span class="who">Codex</span><span class="how mono">codex plugin add memorysafe@memorysafe</span></div>
+    </div>
+    <p>Any one will do. The others get connected in step 3. Full commands are on the release page.</p>
+    <div class="spacer"></div>
+    <div class="trap"><span class="tag">TRAP</span><b>Double-clicking the .mcpb.</b> Windows may open it in Notepad as a cursed scroll. Install it from Claude's Settings instead.</div>
+  </div>
+
+  <div class="card">
+    <div class="top"><div class="num">2</div><div class="kicker">The waiting part</div></div>
+    <h2>Restart it, open the dashboard</h2>
+    <div class="mock">
+      <div class="browser">
+        <div class="url"><span class="dot"></span><span class="mono">127.0.0.1:8765/dashboard</span></div>
+        <div class="pg"><div class="rowx"><span>Building itself…</span><span>0:48</span></div><div class="track"><div class="fill"></div></div>
+          <span class="steps-list">setup tool → Python → packages → check → done</span></div>
+      </div>
+    </div>
+    <p>Quit it properly, reopen it, then open <b class="mono">127.0.0.1:8765/dashboard</b>. First time only: a minute or two.</p>
+    <div class="spacer"></div>
+    <div class="trap"><span class="tag">TRAP</span><b>The ✕ button.</b> Claude just hides in the tray and pretends. Right-click its icon by the clock, Quit.</div>
+  </div>
+
+  <div class="card">
+    <div class="top"><div class="num">3</div><div class="kicker">The one-click part</div></div>
+    <h2>Connect the rest</h2>
+    <div class="mock">
+      <div class="ptitle"><strong>One memory, every assistant</strong><span>3 FOUND · 1 CONNECTED</span></div>
+      <div class="agent"><span class="nm">Claude Desktop<span class="nt">Connected through its extension.</span></span><span class="state on">CONNECTED</span></div>
+      <div class="agent"><span class="nm">Claude Code<span class="nt">Installed here. Not connected yet.</span></span><span class="state btn hot">CONNECT</span></div>
+      <div class="agent"><span class="nm">Codex<span class="nt">Installed here. Not connected yet.</span></span><span class="state btn">CONNECT</span></div>
+    </div>
+    <p>The dashboard finds your other assistants. Click <b>Connect</b> on each, then restart it.</p>
+    <div class="spacer"></div>
+    <div class="win"><span class="tag">DONE</span><b>One memory, every assistant.</b> Tell one something, and the others know it too.</div>
+  </div>
+</section>
+
+<footer><span>Nothing leaves <b>your computer</b>. That's rather the point.</span><span>Stuck? Ask any of them <b>“Is MemorySafe working?”</b></span></footer>
+</body></html>
