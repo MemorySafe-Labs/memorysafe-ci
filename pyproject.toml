@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memorysafe-chatgpt-connector"
+version = "0.5.0"
+description = "Private local MCP memory connector for ChatGPT and Codex"
+requires-python = ">=3.10"
+dependencies = [
+  # 50.0.0 is the lowest version that closes every published alert (11 Nov 2026), but since 49
+  # cryptography ships macOS wheels for Apple silicon only. An Intel Mac would compile it from
+  # source with Rust on first start, which needs Xcode's tools and a network, so Intel macOS
+  # gets 48.0.1: the newest with a universal2 wheel. The alerts left open there are in X.509
+  # path building and PKCS#7 decryption, which this package never calls: it verifies Ed25519
+  # signatures and nothing else.
+  "cryptography==50.0.2; sys_platform != 'darwin' or platform_machine != 'x86_64'",
+  "cryptography==48.0.1; sys_platform == 'darwin' and platform_machine == 'x86_64'",
+  # 2.2.0 closes the four alerts on the MCP SDK's HTTP transports and bearer-token check.
+  "mcp==2.2.0",
+  "tiktoken==0.14.0",
+]
+
+[project.scripts]
+memorysafe = "memorysafe_chatgpt.cli:main"
+memorysafe-chatgpt = "memorysafe_chatgpt.server:main"
+memorysafe-setup = "memorysafe_chatgpt.setup_app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

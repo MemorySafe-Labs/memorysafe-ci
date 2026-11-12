@@ -1,0 +1,8 @@
+# The plugin's OAuth client identity document (CIMD). The hosted sign-in server fetches it
+# over https, checks its client_id is this URL, and keeps it for max-age (1 hour; it caps at
+# 24). Changing this file changes who the plugin is to the server: it is generated from the
+# plugin's client_identity.py, never edited by hand.
+/oauth/memorysafe-plugin.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
