@@ -1,0 +1,18 @@
+{
+  "client_id": "https://memorysafe.ca/oauth/memorysafe-plugin.json",
+  "client_name": "MemorySafe plugin",
+  "client_uri": "https://memorysafe.ca",
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "redirect_uris": [
+    "http://127.0.0.1/callback",
+    "http://localhost/callback"
+  ],
+  "response_types": [
+    "code"
+  ],
+  "scope": "memories offline_access",
+  "token_endpoint_auth_method": "none"
+}
