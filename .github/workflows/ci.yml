@@ -1,0 +1,57 @@
+name: CI
+
+# Called, never triggered. candidate.yml calls this on MemorySafe-Labs/memorysafe-ci, the
+# public repository scripts/push_candidate.py pushes each candidate to, where hosted
+# runners are free on every OS. It used to run on pull requests in the private
+# repository, on Linux only, to fit the free plan's 2,000 minutes a month; on 2026-09-23
+# no job could start. A trigger added here runs it there again, billed.
+on:
+  workflow_call:
+    inputs:
+      os:
+        description: JSON list of runners
+        type: string
+        default: '["ubuntu-latest"]'
+
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.os || '["ubuntu-latest"]') }}
+    runs-on: ${{ matrix.os }}
+    # The launcher and proxy tests start subprocesses. One that hangs, as a launcher test
+    # once did on inherited stdin, should fail the run rather than idle for six hours.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Install
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install -e .
+      - name: Unit tests
+        run: uv run --no-sync python -m unittest discover -s tests
+      # .venv/bin/python does not exist on Windows (it is .venv\Scripts\python.exe), so
+      # every step below routes through `uv run --no-sync`, which finds .venv on either
+      # layout, rather than naming the interpreter path directly.
+      - name: Lock and runtime files are current
+        # git diff --exit-code on a Windows checkout sees CRLF-translated line endings,
+        # which is noise, not signal, so this only runs where the checkout is LF.
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          uv pip compile pyproject.toml --universal --generate-hashes --python-version 3.12 --quiet -o plugin/requirements.lock
+          uv run --no-sync python scripts/plugin_meta.py --write
+          git diff --exit-code -- plugin/requirements.lock plugin/scripts/runtime.env plugin/scripts/uv-checksums
+      - name: Python 3.8 smoke test
+        if: matrix.os == 'ubuntu-latest'
+        run: uv run --no-project --python 3.8 tests/e2e/stdlib_smoke.py
+      - name: Build
+        if: matrix.os == 'ubuntu-latest'
+        run: uv run --no-sync python scripts/build_plugin.py --output-dir dist
+      - uses: actions/upload-artifact@v4
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          name: memorysafe-plugin
+          path: dist/
