@@ -1,0 +1,37 @@
+name: First run
+
+# Called, never triggered: candidate.yml calls this on MemorySafe-Labs/memorysafe-ci, on
+# every OS, for every candidate. It downloads uv, a Python and every package for real.
+# It used to run on pull requests only when the start path changed, and on Linux only,
+# because a macOS minute costs ten on a private repository. On a public one it is free.
+on:
+  workflow_call:
+    inputs:
+      os:
+        description: JSON list of runners
+        type: string
+        default: '["ubuntu-latest"]'
+
+
+jobs:
+  first-run:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.os || '["ubuntu-latest"]') }}
+    runs-on: ${{ matrix.os }}
+    # A download that stalls would otherwise hold a macOS or Windows runner for GitHub's
+    # six hours.
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Build the plugin
+        # .venv/bin/python does not exist on Windows (it is .venv\Scripts\python.exe), so
+        # this runs through `uv run --no-sync`, which finds .venv on either layout.
+        run: |
+          uv venv --python 3.12 .venv
+          uv pip install -e .
+          uv run --no-sync python scripts/build_plugin.py --output-dir dist
+      - name: Start it the way a host would, with nothing set up
+        run: uv run --no-sync python tests/e2e/first_run.py dist/memorysafe-plugin/plugins/memorysafe
