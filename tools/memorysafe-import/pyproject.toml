@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memorysafe-import"
+dynamic = ["version"]
+description = "Move Claude Code's auto-memory files into a MemorySafe account"
+readme = "README.md"
+# No dependencies, on purpose: `uvx memorysafe-import` must start on whatever Python the person has.
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+memorysafe-import = "memorysafe_import.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "memorysafe_import.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
